@@ -7,6 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0C1E596E260FB18E00B7E534 /* Realm in Frameworks */ = {isa = PBXBuildFile; productRef = 0C1E596D260FB18E00B7E534 /* Realm */; };
+		0C1E5970260FB18E00B7E534 /* RealmSwift in Frameworks */ = {isa = PBXBuildFile; productRef = 0C1E596F260FB18E00B7E534 /* RealmSwift */; };
+		0C22CC34260FF95A00E6364A /* Realm.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C22CC33260FF95A00E6364A /* Realm.swift */; };
+		0C22CC6E261068E800E6364A /* PaybackTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C22CC6D261068E800E6364A /* PaybackTests.swift */; };
 		0C3F0DA72607C9D100F539B4 /* TileTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C3F0DA12607C9D100F539B4 /* TileTableViewCell.swift */; };
 		0C3F0DA82607C9D100F539B4 /* ShoppingListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C3F0DA22607C9D100F539B4 /* ShoppingListViewController.swift */; };
 		0C3F0DA92607C9D100F539B4 /* TilesResponseModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C3F0DA52607C9D100F539B4 /* TilesResponseModel.swift */; };
@@ -25,6 +29,7 @@
 		0C3F0DD32607E33E00F539B4 /* FlowCoordinatorDependencyProviders.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C3F0DCE2607E33E00F539B4 /* FlowCoordinatorDependencyProviders.swift */; };
 		0C3F0DD42607E33E00F539B4 /* FlowCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C3F0DCF2607E33E00F539B4 /* FlowCoordinator.swift */; };
 		0C3F0DD52607E33E00F539B4 /* VehicleListFlowCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C3F0DD02607E33E00F539B4 /* VehicleListFlowCoordinator.swift */; };
+		0C72A075260FC1BF0004665D /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C72A074260FC1BF0004665D /* Constants.swift */; };
 		0CD45D9D2605FD6C00DC50B5 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0CD45D9C2605FD6C00DC50B5 /* AppDelegate.swift */; };
 		0CD45D9F2605FD6C00DC50B5 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0CD45D9E2605FD6C00DC50B5 /* SceneDelegate.swift */; };
 		0CD45DA42605FD6C00DC50B5 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0CD45DA22605FD6C00DC50B5 /* Main.storyboard */; };
@@ -35,11 +40,23 @@
 		0CD45DCD2606006D00DC50B5 /* Utilites in Frameworks */ = {isa = PBXBuildFile; productRef = 0CD45DCC2606006D00DC50B5 /* Utilites */; };
 		0CD45DD2260602DD00DC50B5 /* Kingfisher in Frameworks */ = {isa = PBXBuildFile; productRef = 0CD45DD1260602DD00DC50B5 /* Kingfisher */; };
 		0CD45DE0260624EE00DC50B5 /* IQKeyboardManagerSwift in Frameworks */ = {isa = PBXBuildFile; productRef = 0CD45DDF260624EE00DC50B5 /* IQKeyboardManagerSwift */; };
-		0CD45DE4260638CB00DC50B5 /* Realm in Frameworks */ = {isa = PBXBuildFile; productRef = 0CD45DE3260638CB00DC50B5 /* Realm */; };
-		0CD45DE6260638CB00DC50B5 /* RealmSwift in Frameworks */ = {isa = PBXBuildFile; productRef = 0CD45DE5260638CB00DC50B5 /* RealmSwift */; };
 /* End PBXBuildFile section */
 
+/* Begin PBXContainerItemProxy section */
+		0C22CC70261068E800E6364A /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 0CD45D912605FD6C00DC50B5 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 0CD45D982605FD6C00DC50B5;
+			remoteInfo = Payback;
+		};
+/* End PBXContainerItemProxy section */
+
 /* Begin PBXFileReference section */
+		0C22CC33260FF95A00E6364A /* Realm.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Realm.swift; sourceTree = "<group>"; };
+		0C22CC6B261068E800E6364A /* PaybackTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = PaybackTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		0C22CC6D261068E800E6364A /* PaybackTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PaybackTests.swift; sourceTree = "<group>"; };
+		0C22CC6F261068E800E6364A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		0C3F0DA12607C9D100F539B4 /* TileTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TileTableViewCell.swift; sourceTree = "<group>"; };
 		0C3F0DA22607C9D100F539B4 /* ShoppingListViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ShoppingListViewController.swift; sourceTree = "<group>"; };
 		0C3F0DA52607C9D100F539B4 /* TilesResponseModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TilesResponseModel.swift; sourceTree = "<group>"; };
@@ -58,6 +75,7 @@
 		0C3F0DCE2607E33E00F539B4 /* FlowCoordinatorDependencyProviders.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FlowCoordinatorDependencyProviders.swift; sourceTree = "<group>"; };
 		0C3F0DCF2607E33E00F539B4 /* FlowCoordinator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FlowCoordinator.swift; sourceTree = "<group>"; };
 		0C3F0DD02607E33E00F539B4 /* VehicleListFlowCoordinator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VehicleListFlowCoordinator.swift; sourceTree = "<group>"; };
+		0C72A074260FC1BF0004665D /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		0CD45D992605FD6C00DC50B5 /* Payback.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Payback.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		0CD45D9C2605FD6C00DC50B5 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		0CD45D9E2605FD6C00DC50B5 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -68,13 +86,20 @@
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
+		0C22CC68261068E800E6364A /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		0CD45D962605FD6C00DC50B5 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				0CD45DE4260638CB00DC50B5 /* Realm in Frameworks */,
+				0C1E596E260FB18E00B7E534 /* Realm in Frameworks */,
 				0CD45DE0260624EE00DC50B5 /* IQKeyboardManagerSwift in Frameworks */,
-				0CD45DE6260638CB00DC50B5 /* RealmSwift in Frameworks */,
+				0C1E5970260FB18E00B7E534 /* RealmSwift in Frameworks */,
 				0CD45DD2260602DD00DC50B5 /* Kingfisher in Frameworks */,
 				0CD45DC72605FE7E00DC50B5 /* Network in Frameworks */,
 				0CD45DCD2606006D00DC50B5 /* Utilites in Frameworks */,
@@ -85,6 +110,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		0C22CC6C261068E800E6364A /* PaybackTests */ = {
+			isa = PBXGroup;
+			children = (
+				0C22CC6D261068E800E6364A /* PaybackTests.swift */,
+				0C22CC6F261068E800E6364A /* Info.plist */,
+			);
+			path = PaybackTests;
+			sourceTree = "<group>";
+		};
 		0C3F0D9A2607C9D100F539B4 /* Structure */ = {
 			isa = PBXGroup;
 			children = (
@@ -94,6 +128,7 @@
 				0C3F0D9E2607C9D100F539B4 /* Views */,
 				0C3F0DA32607C9D100F539B4 /* UseCases */,
 				0C3F0DA42607C9D100F539B4 /* Entities */,
+				0C22CC33260FF95A00E6364A /* Realm.swift */,
 			);
 			path = Structure;
 			sourceTree = "<group>";
@@ -194,6 +229,7 @@
 			isa = PBXGroup;
 			children = (
 				0CD45D9B2605FD6C00DC50B5 /* Payback */,
+				0C22CC6C261068E800E6364A /* PaybackTests */,
 				0CD45D9A2605FD6C00DC50B5 /* Products */,
 				0CD45DC52605FE7E00DC50B5 /* Frameworks */,
 			);
@@ -203,6 +239,7 @@
 			isa = PBXGroup;
 			children = (
 				0CD45D992605FD6C00DC50B5 /* Payback.app */,
+				0C22CC6B261068E800E6364A /* PaybackTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -213,6 +250,7 @@
 				0C3F0D9A2607C9D100F539B4 /* Structure */,
 				0CD45D9C2605FD6C00DC50B5 /* AppDelegate.swift */,
 				0CD45D9E2605FD6C00DC50B5 /* SceneDelegate.swift */,
+				0C72A074260FC1BF0004665D /* Constants.swift */,
 				0CD45DA22605FD6C00DC50B5 /* Main.storyboard */,
 				0CD45DA52605FD6F00DC50B5 /* Assets.xcassets */,
 				0CD45DA72605FD6F00DC50B5 /* LaunchScreen.storyboard */,
@@ -231,6 +269,24 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
+		0C22CC6A261068E800E6364A /* PaybackTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 0C22CC74261068E800E6364A /* Build configuration list for PBXNativeTarget "PaybackTests" */;
+			buildPhases = (
+				0C22CC67261068E800E6364A /* Sources */,
+				0C22CC68261068E800E6364A /* Frameworks */,
+				0C22CC69261068E800E6364A /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				0C22CC71261068E800E6364A /* PBXTargetDependency */,
+			);
+			name = PaybackTests;
+			productName = PaybackTests;
+			productReference = 0C22CC6B261068E800E6364A /* PaybackTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
 		0CD45D982605FD6C00DC50B5 /* Payback */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = 0CD45DAD2605FD6F00DC50B5 /* Build configuration list for PBXNativeTarget "Payback" */;
@@ -250,8 +306,8 @@
 				0CD45DCC2606006D00DC50B5 /* Utilites */,
 				0CD45DD1260602DD00DC50B5 /* Kingfisher */,
 				0CD45DDF260624EE00DC50B5 /* IQKeyboardManagerSwift */,
-				0CD45DE3260638CB00DC50B5 /* Realm */,
-				0CD45DE5260638CB00DC50B5 /* RealmSwift */,
+				0C1E596D260FB18E00B7E534 /* Realm */,
+				0C1E596F260FB18E00B7E534 /* RealmSwift */,
 			);
 			productName = Payback;
 			productReference = 0CD45D992605FD6C00DC50B5 /* Payback.app */;
@@ -266,6 +322,10 @@
 				LastSwiftUpdateCheck = 1220;
 				LastUpgradeCheck = 1220;
 				TargetAttributes = {
+					0C22CC6A261068E800E6364A = {
+						CreatedOnToolsVersion = 12.2;
+						TestTargetID = 0CD45D982605FD6C00DC50B5;
+					};
 					0CD45D982605FD6C00DC50B5 = {
 						CreatedOnToolsVersion = 12.2;
 					};
@@ -290,11 +350,19 @@
 			projectRoot = "";
 			targets = (
 				0CD45D982605FD6C00DC50B5 /* Payback */,
+				0C22CC6A261068E800E6364A /* PaybackTests */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
+		0C22CC69261068E800E6364A /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		0CD45D972605FD6C00DC50B5 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -308,6 +376,14 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
+		0C22CC67261068E800E6364A /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				0C22CC6E261068E800E6364A /* PaybackTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		0CD45D952605FD6C00DC50B5 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -315,6 +391,7 @@
 				0C3F0DAF2607CA2400F539B4 /* ApiConstants.swift in Sources */,
 				0C3F0DBA2607D3A700F539B4 /* TileListViewModel.swift in Sources */,
 				0C3F0DD22607E33E00F539B4 /* ApplicationFlowCoordinator.swift in Sources */,
+				0C22CC34260FF95A00E6364A /* Realm.swift in Sources */,
 				0C3F0DC52607D40700F539B4 /* TileListNavigator.swift in Sources */,
 				0C3F0DA82607C9D100F539B4 /* ShoppingListViewController.swift in Sources */,
 				0C3F0DBC2607D3A700F539B4 /* TileViewModelBuilder.swift in Sources */,
@@ -323,6 +400,7 @@
 				0C3F0DB12607CA2400F539B4 /* TileUseCase.swift in Sources */,
 				0C3F0DA72607C9D100F539B4 /* TileTableViewCell.swift in Sources */,
 				0C3F0DCA2607D52A00F539B4 /* ProgressHUD.swift in Sources */,
+				0C72A075260FC1BF0004665D /* Constants.swift in Sources */,
 				0C3F0DD32607E33E00F539B4 /* FlowCoordinatorDependencyProviders.swift in Sources */,
 				0CD45D9D2605FD6C00DC50B5 /* AppDelegate.swift in Sources */,
 				0C3F0DB02607CA2400F539B4 /* Resource+Tile.swift in Sources */,
@@ -336,6 +414,14 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		0C22CC71261068E800E6364A /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 0CD45D982605FD6C00DC50B5 /* Payback */;
+			targetProxy = 0C22CC70261068E800E6364A /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
 		0CD45DA22605FD6C00DC50B5 /* Main.storyboard */ = {
@@ -357,6 +443,44 @@
 /* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
+		0C22CC72261068E800E6364A /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				INFOPLIST_FILE = PaybackTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.PaybackTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Payback.app/Payback";
+			};
+			name = Debug;
+		};
+		0C22CC73261068E800E6364A /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				INFOPLIST_FILE = PaybackTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.PaybackTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Payback.app/Payback";
+			};
+			name = Release;
+		};
 		0CD45DAB2605FD6F00DC50B5 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -512,6 +636,15 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
+		0C22CC74261068E800E6364A /* Build configuration list for PBXNativeTarget "PaybackTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				0C22CC72261068E800E6364A /* Debug */,
+				0C22CC73261068E800E6364A /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
 		0CD45D942605FD6C00DC50B5 /* Build configuration list for PBXProject "Payback" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
@@ -560,6 +693,16 @@
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
+		0C1E596D260FB18E00B7E534 /* Realm */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 0CD45DE2260638CA00DC50B5 /* XCRemoteSwiftPackageReference "realm-cocoa" */;
+			productName = Realm;
+		};
+		0C1E596F260FB18E00B7E534 /* RealmSwift */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 0CD45DE2260638CA00DC50B5 /* XCRemoteSwiftPackageReference "realm-cocoa" */;
+			productName = RealmSwift;
+		};
 		0CD45DC62605FE7E00DC50B5 /* Network */ = {
 			isa = XCSwiftPackageProductDependency;
 			productName = Network;
@@ -581,16 +724,6 @@
 			isa = XCSwiftPackageProductDependency;
 			package = 0CD45DDE260624EE00DC50B5 /* XCRemoteSwiftPackageReference "IQKeyboardManager" */;
 			productName = IQKeyboardManagerSwift;
-		};
-		0CD45DE3260638CB00DC50B5 /* Realm */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = 0CD45DE2260638CA00DC50B5 /* XCRemoteSwiftPackageReference "realm-cocoa" */;
-			productName = Realm;
-		};
-		0CD45DE5260638CB00DC50B5 /* RealmSwift */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = 0CD45DE2260638CA00DC50B5 /* XCRemoteSwiftPackageReference "realm-cocoa" */;
-			productName = RealmSwift;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};

@@ -22,6 +22,7 @@ final class NetworkService: NetworkServiceType {
         guard let request = resource.request else {
             return .just(.failure(NetworkError.invalidRequest))
         }
+        
         return URLSession.shared.dataTaskPublisher(for: request)
             .mapError { _ in NetworkError.invalidRequest }
             .print()
@@ -33,6 +34,7 @@ final class NetworkService: NetworkServiceType {
                 guard 200..<300 ~= response.statusCode else {
                     return .fail(NetworkError.dataLoadingError(statusCode: response.statusCode, data: data))
                 }
+                UserDefaults.standard.set(response.value(forHTTPHeaderField: "Date"), forKey: "lastUpdated")
                 return .just(data)
             }
             .decode(type: T.self, decoder: JSONDecoder())
@@ -42,5 +44,4 @@ final class NetworkService: NetworkServiceType {
         })
         .eraseToAnyPublisher()
     }
-
 }

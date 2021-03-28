@@ -21,15 +21,7 @@ public extension UIImageView {
     func setImage(url: String?, placeholder: UIImage? = nil, isActivity: Bool? = false, activityColor: UIColor? = .white,completion: @escaping () -> Void) {
         
         if let urlImg = url?.addingPercentEncoding(withAllowedCharacters: .urlQueryAllowed) {
-           // self.sd_setImage(with: URL(string: u), placeholderImage: placeholder)
-            
-           // imageView.kf.indicatorType = .activity
-          //  (imageView.kf.indicator?.view as? UIActivityIndicatorView)?.color = .white
-           // [.memoryCacheExpiration(.expired), .diskCacheExpiration(.expired),.loadDiskFileSynchronously]
-            
-            
             if(verifyUrl(url: urlImg)) {
-           // if(urlImg.verifyUrl()) {
                 if isActivity! {
                     self.kf.indicatorType = .activity
                     (self.kf.indicator?.view as? UIActivityIndicatorView)?.color = activityColor

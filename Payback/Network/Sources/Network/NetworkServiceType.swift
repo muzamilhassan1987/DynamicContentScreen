@@ -22,3 +22,4 @@ public enum NetworkError: Error {
     case dataLoadingError(statusCode: Int, data: Data)
     case jsonDecodingError(error: Error)
 }
+

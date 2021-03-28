@@ -8,7 +8,9 @@
 import UIKit
 import RealmSwift
 import Combine
-
+import SafariServices
+import AVKit
+import AVFoundation
 
 class ShoppingListViewController: UIViewController {
 
@@ -22,7 +24,7 @@ class ShoppingListViewController: UIViewController {
     var filteredTiles: [TileViewModel] = []
     
     
-    static let realm = try! Realm()
+    
     
     @IBOutlet weak var tableView: UITableView!
     var model : TilesResponseModel?
@@ -41,17 +43,6 @@ class ShoppingListViewController: UIViewController {
         self.viewModel = viewModel
     }
     
-//    init(viewModel: TileListViewModelType) {
-//        self.viewModel = viewModel
-//        super.init(nibName: nil, bundle: nil)
-//    }
-//
-//
-//    required init?(coder: NSCoder) {
-//        fatalError("Not supported!")
-//    }
-
-    
     
     
     override func viewDidLoad() {
@@ -59,7 +50,15 @@ class ShoppingListViewController: UIViewController {
         super.viewDidLoad()
         configureUI()
         bind(to: viewModel!)
-        appear.send()
+        
+        if self.viewModel!.isRefreshData() {
+            appear.send()
+        }
+        else {
+            
+            showListItem(tiles: self.viewModel?.fetchFromDatabase() ?? List<Tile>())
+        }
+        
     }
     
     private func configureUI() {
@@ -70,18 +69,7 @@ class ShoppingListViewController: UIViewController {
         ProgressHUD.animationType = .circleStrokeSpin
         ProgressHUD.colorAnimation = .systemBlue
     
-    //    tableView.register(VehicleCell.nib(), forCellReuseIdentifier: VehicleCell.identifier())
         tableView.dataSource = dataSource
-        
-//        model = loadJsonFile()
-//
-//        if let tiles = model?.tiles {
-//            filteredTiles.append(contentsOf: tiles)
-//        }
-//
-//       rearrangeTiles()
-//        realmWrite()
-//        initializeSearchBar()
     }
     private func bind(to viewModel: TileListViewModelType) {
         cancellables.forEach { $0.cancel() }
@@ -111,222 +99,21 @@ class ShoppingListViewController: UIViewController {
             update(with: [], animate: true)
         case .success(let tiles):
             ProgressHUD.dismiss()
-            tilesList = self.viewModels(from: tiles)
-            filteredTiles.append(contentsOf: tilesList!)
-            rearrangeTiles()
-            realmWrite(list: tiles)
-            update(with: filteredTiles, animate: true)
+            self.viewModel?.writeToDatabase(list: tiles)
+            showListItem(tiles: tiles)
+            
         }
     }
-    private func viewModels(from Tiles: List<Tile>) -> [TileViewModel] {
-        return Tiles.map({[unowned self] Tile in
-            return TileViewModelBuilder.viewModel(from: Tile)
-        })
-    }
     
-    func realmWrite(list : List<Tile>) {
-        try!  ShoppingListViewController.realm.write()  {
-            ShoppingListViewController.realm.deleteAll()
-        }
-      try!  ShoppingListViewController.realm.write() {
-        ShoppingListViewController.realm.add(list)
-        }
+    func showListItem(tiles : List<Tile>) {
+        tilesList = self.viewModel?.viewModelsList(from: tiles)
+        filteredTiles = self.viewModel?.rearrangeTiles(tilesList!) ?? []
+        update(with: filteredTiles, animate: true)
     }
 
-    func rearrangeTiles() {
-      
-        filteredTiles = filteredTiles.sorted(by: { $0.score > $1.score })
-        
-        tableView.reloadData()
-    }
-    
-    func initializeSearchBar() {
-        // 1
-        searchController.searchResultsUpdater = self
-        // 2
-        searchController.obscuresBackgroundDuringPresentation = false
-        // 3
-        searchController.searchBar.placeholder = "Search Items"
-        // 4
-        navigationItem.searchController = searchController
-        // 5
-        definesPresentationContext = true
-    }
-   
-    func filterContentForSearchText(_ searchText: String) {
-        
-        if let tile = tilesList {
-            if (searchText.count > 0) {
-                filteredTiles = tile.filter { (tile: TileViewModel) -> Bool in
-                    return (tile.name.lowercased().contains(searchText.lowercased()) ?? false)
-                }
-            }
-            else {
-                filteredTiles = Array(tile)
-            }
-        }
-        rearrangeTiles()
-    }
 
 }
-//extension ShoppingListViewController : UITableViewDelegate, UITableViewDataSource {
-//
-//    // number of rows in table view
-//        func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-//
-////            if isFiltering {
-////                return filteredTiles.count
-////              }
-////
-//            return filteredTiles.count
-//
-//        }
-//
-//        // create a cell for each table view row
-//        func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-//
-//            // create a new cell if needed or reuse an old one
-//            let cell = self.tableView.dequeueReusableCell(withIdentifier: "TileTableViewCell") as! TileTableViewCell
-//            let data = filteredTiles[indexPath.row]
-//            cell.tileModel = data
-//            cell.shoppingItemAdd = {[weak self](item) in
-//
-//                self?.tableView.reloadRows(at: [indexPath], with: .none)
-//            }
-//            //cell.contentView.backgroundColor = .random()
-//            return cell
-//
-//
-//        }
-//
-//        // method to run when table view cell is tapped
-//        func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-//            print("You tapped cell number \(indexPath.row).")
-//
-//            let data = filteredTiles[indexPath.row]
-//            if let type = data.name {
-//                switch ContentType(rawValue: type) {
-//                case .image:
-//                    break
-//                case .video:
-//                    break
-//                case .webseite:
-//                    break
-//                case .shoppingList:
-//                    break
-//                case .none:
-//                    break
-//                }
-//            }
-//
-//        }
-//
-//}
-func loadJsonFile() -> TilesResponseModel?{
-    
-    let jsonString = """
-    {
-        "tiles": [
-            {
-                "name": "image",
-                "headline": "Tim Cook sjkfj kjfdkjfkd jkfdjkf kjdfkjfkj kjfdkjkdf jkj Tim Cook sjkfj kjfdkjfkd jkfdjkf kjdfkjfkj kjfdkjkdf jkj",
-                "subline": "CEO of Apple Inc.",
-                "data": "https://upload.wikimedia.org/wikipedia/commons/thumb/d/d5/Tim_Cook_2009_cropped.jpg/220px-Tim_Cook_2009_cropped.jpg",
-                "score": 100
-            },
-            {
-                "name": "video",
-                "headline": "Cartoon",
-                "data": "https://www.sample-videos.com/video123/mp4/720/big_buck_bunny_720p_1mb.mp4",
-                "score": 10
-            },
-            {
-                "name": "website",
-                "headline": "PAYBACK",
-                "subline": "Coupons, Payment and more.",
-                "data": "https://www.payback.de",
-                "score": 3
-            },
-            {
-                "name": "image",
-                "headline": "Swift",
-                "subline": "An advanced programming language",
-                "data": "https://upload.wikimedia.org/wikipedia/commons/thumb/2/20/Swift_logo_with_text.svg/200px-Swift_logo_with_text.svg.png",
-                "score": 50
-            },
-            {
-                "name": "website",
-                "headline": "Google",
-                "data": "https://www.google.de",
-                "score": 30
-            },
-            {
-                "name": "image",
-                "headline": "iPhone",
-                "data": "https://upload.wikimedia.org/wikipedia/commons/thumb/3/37/IPhone_11_Pro_Max_Midnight_Green.svg/150px-IPhone_11_Pro_Max_Midnight_Green.svg.png",
-                "score": 70
-            },
-            {
-                "name": "website",
-                "headline": "Wikipedia",
-                "data": "https://www.wikimedia.org",
-                "score": 4
-            },
-            {
-                "name": "shopping_list",
-                "headline": "Shopping List",
-                "score": 23
-            },
-            {
-                "name": "shopping_list",
-                "headline": "Shopping List",
-                "score": 71
-            },
-            {
-                "name": "shopping_list",
-                "headline": "Shopping List",
-                "score": 12
-            }
-        ]
-    }
-    """
-    let jsonData = Data(jsonString.utf8)
-    let decoder = JSONDecoder()
 
-    do {
-        let people = try decoder.decode(TilesResponseModel.self, from: jsonData)
-        print(people)
-        return people
-    } catch {
-        print(error.localizedDescription)
-    }
-    return nil
-}
-
-extension UIColor {
-    static func random() -> UIColor {
-        return UIColor(
-           red:   .random(),
-           green: .random(),
-           blue:  .random(),
-           alpha: 1.0
-        )
-    }
-}
-extension CGFloat {
-    static func random() -> CGFloat {
-        return CGFloat(arc4random()) / CGFloat(UInt32.max)
-    }
-}
-extension ShoppingListViewController: UISearchResultsUpdating {
-  func updateSearchResults(for searchController: UISearchController) {
-    
-    let searchBar = searchController.searchBar
-    filterContentForSearchText(searchBar.text!)
-
-    
-  }
-}
 fileprivate extension ShoppingListViewController {
     enum Section: CaseIterable {
         case tiles
@@ -370,4 +157,33 @@ fileprivate extension ShoppingListViewController {
             
         }
     }
+    
+    func showTutorial() {
+        if let url = URL(string: "https://www.google.com") {
+            let config = SFSafariViewController.Configuration()
+            config.entersReaderIfAvailable = true
+            let vc = SFSafariViewController(url: url, configuration: config)
+            present(vc, animated: true)
+        }
+    }
+    func playVideo() {
+        let player = AVPlayer(url: URL(string: "https://www.sample-videos.com/video123/mp4/720/big_buck_bunny_720p_1mb.mp4")!)
+        let vc = AVPlayerViewController()
+        vc.player = player
+
+        present(vc, animated: true) {
+            vc.player?.play()
+        }
+    }
+}
+extension ShoppingListViewController: UITableViewDelegate {
+
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+//        let snapshot = dataSource.snapshot()
+//        //selection.send(snapshot.itemIdentifiers[indexPath.row].id)
+//        tableView.deselectRow(at: indexPath, animated: true)
+        //showTutorial()
+        playVideo()
+    }
+
 }

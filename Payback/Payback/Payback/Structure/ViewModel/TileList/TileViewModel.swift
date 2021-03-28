@@ -15,6 +15,7 @@ struct TileViewModel {
     let headline : String
     let subline : String
     let data : String
+    var imgThumb : UIImage?
     let score : Int
     let shoppingItems : List<String>
     
@@ -37,3 +38,4 @@ extension TileViewModel: Hashable {
         hasher.combine(score)
     }
 }
+

@@ -1,9 +1,3 @@
-//
-//  AppDelegate.swift
-//  Payback
-//
-//  Created by Systems Limited on 20/03/2021.
-//
 
 import UIKit
 import IQKeyboardManagerSwift

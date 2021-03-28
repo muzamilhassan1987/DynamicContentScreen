@@ -38,5 +38,25 @@ typealias TileListViewModelOuput = AnyPublisher<TileListState, Never>
 
 protocol TileListViewModelType {
     func transform(input: TileListViewModelInput) -> TileListViewModelOuput
+    func viewModelsList(from Tiles: List<Tile>) -> [TileViewModel]
+    func rearrangeTiles(_ tiles : [TileViewModel]) -> [TileViewModel]?
+    func writeToDatabase(list : List<Tile>)
+    func isRefreshData() -> Bool
+    func fetchFromDatabase() -> List<Tile>
+}
+
+extension TileListViewModelType {
+    func rearrangeTiles(_ tiles : [TileViewModel]) -> [TileViewModel]? {
+      return nil
+    }
+    func writeToDatabase(list : List<Tile>) {
+        
+    }
+    func isRefreshData() -> Bool {
+        return true
+    }
+    func fetchFromDatabase() -> List<Tile> {
+        return List<Tile>()
+    }
 }
 

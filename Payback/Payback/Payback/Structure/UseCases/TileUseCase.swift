@@ -1,9 +1,3 @@
-//
-//  TileUseCase.swift
-//  FreeNowMvvm
-//
-//  Created by Systems Limited on 19/12/2020.
-//
 
 import Foundation
 import Combine
@@ -12,7 +6,6 @@ import Network
 import RealmSwift
 import UIKit
 protocol TileUseCaseType {
-//List<Tile>()
     /// Runs Tiles search with a query string
     func getTiles() -> AnyPublisher<Result<List<Tile>, Error>, Never>
 
@@ -50,20 +43,5 @@ final class TileUseCase: TileUseCaseType {
             .receive(on: Scheduler.mainScheduler)
             .eraseToAnyPublisher()
     }
-///Not implemented
-//    func TileDetails(with id: Int) -> AnyPublisher<Result<Tile, Error>, Never> {
-//        return networkService
-//            .load(Resource<Tile>.details(TileId: id))
-//            .map({ (result: Result<Tile, NetworkError>) -> Result<Tile, Error> in
-//                switch result {
-//                case .success(let Tile): return .success(Tile)
-//                case .failure(let error): return .failure(error)
-//                }
-//            })
-//            .subscribe(on: Scheduler.backgroundWorkScheduler)
-//            .receive(on: Scheduler.mainScheduler)
-//            .eraseToAnyPublisher()
-//    }
-
 
 }

@@ -16,7 +16,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" allowsSelection="NO" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="8XQ-pG-pXa">
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="8XQ-pG-pXa">
                                 <rect key="frame" x="0.0" y="44" width="414" height="818"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <prototypes>
@@ -47,11 +47,21 @@
                                                                 <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="xjw-TT-IV5">
                                                                     <rect key="frame" x="0.0" y="0.0" width="374" height="187"/>
                                                                 </imageView>
+                                                                <button opaque="NO" userInteractionEnabled="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="NB1-ON-YUT">
+                                                                    <rect key="frame" x="159" y="65.5" width="56" height="56"/>
+                                                                    <constraints>
+                                                                        <constraint firstAttribute="width" secondItem="NB1-ON-YUT" secondAttribute="height" id="gu3-TU-UxY"/>
+                                                                    </constraints>
+                                                                    <state key="normal" image="playicon"/>
+                                                                </button>
                                                             </subviews>
                                                             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                             <constraints>
+                                                                <constraint firstItem="NB1-ON-YUT" firstAttribute="centerX" secondItem="kKM-xW-Z7F" secondAttribute="centerX" id="3Td-E2-9Mx"/>
                                                                 <constraint firstAttribute="trailing" secondItem="xjw-TT-IV5" secondAttribute="trailing" id="9Zx-lE-23f"/>
+                                                                <constraint firstItem="NB1-ON-YUT" firstAttribute="centerY" secondItem="kKM-xW-Z7F" secondAttribute="centerY" id="H8p-6R-tFu"/>
                                                                 <constraint firstAttribute="width" secondItem="kKM-xW-Z7F" secondAttribute="height" multiplier="2" id="SwB-xh-pXg"/>
+                                                                <constraint firstItem="NB1-ON-YUT" firstAttribute="width" secondItem="kKM-xW-Z7F" secondAttribute="width" multiplier="0.15" id="bgN-Xk-Hbn"/>
                                                                 <constraint firstItem="xjw-TT-IV5" firstAttribute="top" secondItem="kKM-xW-Z7F" secondAttribute="top" id="pg8-ry-sAa"/>
                                                                 <constraint firstAttribute="bottom" secondItem="xjw-TT-IV5" secondAttribute="bottom" id="rBy-gf-9ga"/>
                                                                 <constraint firstItem="xjw-TT-IV5" firstAttribute="leading" secondItem="kKM-xW-Z7F" secondAttribute="leading" id="zUc-oi-oXL"/>
@@ -109,6 +119,7 @@
                                         </tableViewCellContentView>
                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <connections>
+                                            <outlet property="btnPlay" destination="NB1-ON-YUT" id="M28-ia-seL"/>
                                             <outlet property="imgPlaceholder" destination="xjw-TT-IV5" id="o8c-E7-kNt"/>
                                             <outlet property="lblHeadLine" destination="s8F-MG-pAQ" id="1u7-sp-RaJ"/>
                                             <outlet property="lblSubLine" destination="8fg-yz-vqs" id="Zt0-nE-rUv"/>
@@ -164,6 +175,7 @@
         </scene>
     </scenes>
     <resources>
+        <image name="playicon" width="84.5" height="84.5"/>
         <systemColor name="opaqueSeparatorColor">
             <color red="0.77647058823529413" green="0.77647058823529413" blue="0.78431372549019607" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>

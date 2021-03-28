@@ -9,6 +9,7 @@ import UIKit
 import Kingfisher
 import UICommon
 import RealmSwift
+import AVFoundation
 enum ContentType : String {
     case image = "image"
     case video = "video"
@@ -18,6 +19,7 @@ enum ContentType : String {
 
 class TileTableViewCell: UITableViewCell {
 
+    @IBOutlet weak var btnPlay: UIButton!
     @IBOutlet weak var viewBackground: UIView!
     @IBOutlet weak var mainStack: UIStackView!
     @IBOutlet weak var viewShoppingList: UIView!
@@ -65,6 +67,7 @@ class TileTableViewCell: UITableViewCell {
         lblSubLine.isHidden = true
         viewImage.isHidden = true
         viewShoppingList.isHidden = true
+        btnPlay.isHidden = true
         if let model = viewModel {
             lblHeadLine.isHidden = !(model.headline.count > 0)
             lblSubLine.isHidden = !(model.subline.count  > 0)
@@ -75,7 +78,6 @@ class TileTableViewCell: UITableViewCell {
         
         
     }
-    
     func setContentType() {
         
         if let type = viewModel?.name {
@@ -87,10 +89,12 @@ class TileTableViewCell: UITableViewCell {
                 })
                 break
             case .video:
+                btnPlay.isHidden = false
                 viewImage.isHidden = false
-                imgPlaceholder.setImage(url: viewModel?.data, completion: {
-                    
-                })
+                self.getThumbnailImageFromVideoUrl(link: viewModel?.data ?? "") { [weak self] (thumbImage) in
+                    self?.viewModel?.imgThumb = thumbImage
+                    self?.imgPlaceholder.image = thumbImage
+                }
                 break
             case .webseite:
                 break
@@ -138,6 +142,31 @@ extension TileTableViewCell : UITextFieldDelegate {
             }
         } catch let error {
             print("Could not add message due to error:\n\(error)")
+        }
+    }
+ 
+    func getThumbnailImageFromVideoUrl(link: String, completion: @escaping ((_ image: UIImage?)->Void)) {
+        
+        guard let url = URL(string: link) else {
+            return
+        }
+        DispatchQueue.global().async { //1
+            let asset = AVAsset(url: url) //2
+            let avAssetImageGenerator = AVAssetImageGenerator(asset: asset) //3
+            avAssetImageGenerator.appliesPreferredTrackTransform = true //4
+            let thumnailTime = CMTimeMake(value: 2, timescale: 1) //5
+            do {
+                let cgThumbImage = try avAssetImageGenerator.copyCGImage(at: thumnailTime, actualTime: nil) //6
+                let thumbImage = UIImage(cgImage: cgThumbImage) //7
+                DispatchQueue.main.async { //8
+                    completion(thumbImage) //9
+                }
+            } catch {
+                print(error.localizedDescription) //10
+                DispatchQueue.main.async {
+                    completion(nil) //11
+                }
+            }
         }
     }
     

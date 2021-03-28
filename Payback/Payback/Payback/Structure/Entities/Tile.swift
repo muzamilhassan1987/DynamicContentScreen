@@ -1,21 +1,9 @@
-//
-//  ShopModel.swift
-//  PaybackTask
-//
-//  Created by Systems Limited on 20/03/2021.
-//
+
 
 import Foundation
 import RealmSwift
 class Tile : Object, Codable {
 
-//    var name : String?
-//    var headline : String?
-//    var subline : String?
-//    var data : String?
-//    var score : Int?
-//    var shoppingItems : [String]?
-    
     @objc dynamic var name : String?
     @objc dynamic var headline : String?
     @objc dynamic var subline : String?
