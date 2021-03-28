@@ -11,6 +11,5 @@ protocol ApplicationFlowCoordinatorDependencyProvider: class {
 protocol TileListFlowCoordinatorDependencyProvider: class {
     /// Creates UIViewController to search for a Tile
     func TileListController(navigator: TileListNavigator) -> UIViewController
-
-   // func TileMapController() -> UIViewController
+    
 }

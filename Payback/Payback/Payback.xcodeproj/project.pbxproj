@@ -9,10 +9,13 @@
 /* Begin PBXBuildFile section */
 		0C1E596E260FB18E00B7E534 /* Realm in Frameworks */ = {isa = PBXBuildFile; productRef = 0C1E596D260FB18E00B7E534 /* Realm */; };
 		0C1E5970260FB18E00B7E534 /* RealmSwift in Frameworks */ = {isa = PBXBuildFile; productRef = 0C1E596F260FB18E00B7E534 /* RealmSwift */; };
-		0C22CC34260FF95A00E6364A /* Realm.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C22CC33260FF95A00E6364A /* Realm.swift */; };
 		0C22CC6E261068E800E6364A /* PaybackTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C22CC6D261068E800E6364A /* PaybackTests.swift */; };
+		0C3DF2542610FDEE0006912E /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C3DF2522610FDEE0006912E /* Constants.swift */; };
+		0C3DF2552610FDEE0006912E /* Realm.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C3DF2532610FDEE0006912E /* Realm.swift */; };
+		0C3DF25E2611189B0006912E /* TileUseCaseMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C3DF25D2611189B0006912E /* TileUseCaseMock.swift */; };
+		0C3DF264261134330006912E /* TileViewModelTestCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C3DF263261134330006912E /* TileViewModelTestCase.swift */; };
 		0C3F0DA72607C9D100F539B4 /* TileTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C3F0DA12607C9D100F539B4 /* TileTableViewCell.swift */; };
-		0C3F0DA82607C9D100F539B4 /* ShoppingListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C3F0DA22607C9D100F539B4 /* ShoppingListViewController.swift */; };
+		0C3F0DA82607C9D100F539B4 /* TilesListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C3F0DA22607C9D100F539B4 /* TilesListViewController.swift */; };
 		0C3F0DA92607C9D100F539B4 /* TilesResponseModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C3F0DA52607C9D100F539B4 /* TilesResponseModel.swift */; };
 		0C3F0DAA2607C9D100F539B4 /* Tile.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C3F0DA62607C9D100F539B4 /* Tile.swift */; };
 		0C3F0DAF2607CA2400F539B4 /* ApiConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C3F0DAC2607CA2400F539B4 /* ApiConstants.swift */; };
@@ -28,8 +31,7 @@
 		0C3F0DD22607E33E00F539B4 /* ApplicationFlowCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C3F0DCD2607E33D00F539B4 /* ApplicationFlowCoordinator.swift */; };
 		0C3F0DD32607E33E00F539B4 /* FlowCoordinatorDependencyProviders.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C3F0DCE2607E33E00F539B4 /* FlowCoordinatorDependencyProviders.swift */; };
 		0C3F0DD42607E33E00F539B4 /* FlowCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C3F0DCF2607E33E00F539B4 /* FlowCoordinator.swift */; };
-		0C3F0DD52607E33E00F539B4 /* VehicleListFlowCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C3F0DD02607E33E00F539B4 /* VehicleListFlowCoordinator.swift */; };
-		0C72A075260FC1BF0004665D /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C72A074260FC1BF0004665D /* Constants.swift */; };
+		0C3F0DD52607E33E00F539B4 /* TileListFlowCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C3F0DD02607E33E00F539B4 /* TileListFlowCoordinator.swift */; };
 		0CD45D9D2605FD6C00DC50B5 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0CD45D9C2605FD6C00DC50B5 /* AppDelegate.swift */; };
 		0CD45D9F2605FD6C00DC50B5 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0CD45D9E2605FD6C00DC50B5 /* SceneDelegate.swift */; };
 		0CD45DA42605FD6C00DC50B5 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0CD45DA22605FD6C00DC50B5 /* Main.storyboard */; };
@@ -53,12 +55,15 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		0C22CC33260FF95A00E6364A /* Realm.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Realm.swift; sourceTree = "<group>"; };
 		0C22CC6B261068E800E6364A /* PaybackTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = PaybackTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		0C22CC6D261068E800E6364A /* PaybackTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PaybackTests.swift; sourceTree = "<group>"; };
 		0C22CC6F261068E800E6364A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		0C3DF2522610FDEE0006912E /* Constants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
+		0C3DF2532610FDEE0006912E /* Realm.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Realm.swift; sourceTree = "<group>"; };
+		0C3DF25D2611189B0006912E /* TileUseCaseMock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TileUseCaseMock.swift; sourceTree = "<group>"; };
+		0C3DF263261134330006912E /* TileViewModelTestCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TileViewModelTestCase.swift; sourceTree = "<group>"; };
 		0C3F0DA12607C9D100F539B4 /* TileTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TileTableViewCell.swift; sourceTree = "<group>"; };
-		0C3F0DA22607C9D100F539B4 /* ShoppingListViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ShoppingListViewController.swift; sourceTree = "<group>"; };
+		0C3F0DA22607C9D100F539B4 /* TilesListViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TilesListViewController.swift; sourceTree = "<group>"; };
 		0C3F0DA52607C9D100F539B4 /* TilesResponseModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TilesResponseModel.swift; sourceTree = "<group>"; };
 		0C3F0DA62607C9D100F539B4 /* Tile.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Tile.swift; sourceTree = "<group>"; };
 		0C3F0DAC2607CA2400F539B4 /* ApiConstants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ApiConstants.swift; sourceTree = "<group>"; };
@@ -74,8 +79,7 @@
 		0C3F0DCD2607E33D00F539B4 /* ApplicationFlowCoordinator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ApplicationFlowCoordinator.swift; sourceTree = "<group>"; };
 		0C3F0DCE2607E33E00F539B4 /* FlowCoordinatorDependencyProviders.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FlowCoordinatorDependencyProviders.swift; sourceTree = "<group>"; };
 		0C3F0DCF2607E33E00F539B4 /* FlowCoordinator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FlowCoordinator.swift; sourceTree = "<group>"; };
-		0C3F0DD02607E33E00F539B4 /* VehicleListFlowCoordinator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VehicleListFlowCoordinator.swift; sourceTree = "<group>"; };
-		0C72A074260FC1BF0004665D /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
+		0C3F0DD02607E33E00F539B4 /* TileListFlowCoordinator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TileListFlowCoordinator.swift; sourceTree = "<group>"; };
 		0CD45D992605FD6C00DC50B5 /* Payback.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Payback.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		0CD45D9C2605FD6C00DC50B5 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		0CD45D9E2605FD6C00DC50B5 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -113,22 +117,41 @@
 		0C22CC6C261068E800E6364A /* PaybackTests */ = {
 			isa = PBXGroup;
 			children = (
+				0C3DF25C2611188A0006912E /* Mocks */,
 				0C22CC6D261068E800E6364A /* PaybackTests.swift */,
 				0C22CC6F261068E800E6364A /* Info.plist */,
+				0C3DF263261134330006912E /* TileViewModelTestCase.swift */,
 			);
 			path = PaybackTests;
+			sourceTree = "<group>";
+		};
+		0C3DF2512610FDEE0006912E /* Utilities */ = {
+			isa = PBXGroup;
+			children = (
+				0C3DF2522610FDEE0006912E /* Constants.swift */,
+				0C3DF2532610FDEE0006912E /* Realm.swift */,
+			);
+			path = Utilities;
+			sourceTree = "<group>";
+		};
+		0C3DF25C2611188A0006912E /* Mocks */ = {
+			isa = PBXGroup;
+			children = (
+				0C3DF25D2611189B0006912E /* TileUseCaseMock.swift */,
+			);
+			path = Mocks;
 			sourceTree = "<group>";
 		};
 		0C3F0D9A2607C9D100F539B4 /* Structure */ = {
 			isa = PBXGroup;
 			children = (
+				0C3F0D9D2607C9D100F539B4 /* ThirdPartyViews */,
+				0C3DF2512610FDEE0006912E /* Utilities */,
 				0C3F0D9B2607C9D100F539B4 /* ViewModel */,
 				0C3F0D9C2607C9D100F539B4 /* FlowCoordinator */,
-				0C3F0D9D2607C9D100F539B4 /* ThirdPartyViews */,
 				0C3F0D9E2607C9D100F539B4 /* Views */,
 				0C3F0DA32607C9D100F539B4 /* UseCases */,
 				0C3F0DA42607C9D100F539B4 /* Entities */,
-				0C22CC33260FF95A00E6364A /* Realm.swift */,
 			);
 			path = Structure;
 			sourceTree = "<group>";
@@ -148,7 +171,7 @@
 				0C3F0DCD2607E33D00F539B4 /* ApplicationFlowCoordinator.swift */,
 				0C3F0DCF2607E33E00F539B4 /* FlowCoordinator.swift */,
 				0C3F0DCE2607E33E00F539B4 /* FlowCoordinatorDependencyProviders.swift */,
-				0C3F0DD02607E33E00F539B4 /* VehicleListFlowCoordinator.swift */,
+				0C3F0DD02607E33E00F539B4 /* TileListFlowCoordinator.swift */,
 			);
 			path = FlowCoordinator;
 			sourceTree = "<group>";
@@ -173,7 +196,7 @@
 			isa = PBXGroup;
 			children = (
 				0C3F0DA02607C9D100F539B4 /* Cells */,
-				0C3F0DA22607C9D100F539B4 /* ShoppingListViewController.swift */,
+				0C3F0DA22607C9D100F539B4 /* TilesListViewController.swift */,
 				0C3F0DC42607D40700F539B4 /* TileListNavigator.swift */,
 			);
 			path = TileList;
@@ -250,7 +273,6 @@
 				0C3F0D9A2607C9D100F539B4 /* Structure */,
 				0CD45D9C2605FD6C00DC50B5 /* AppDelegate.swift */,
 				0CD45D9E2605FD6C00DC50B5 /* SceneDelegate.swift */,
-				0C72A074260FC1BF0004665D /* Constants.swift */,
 				0CD45DA22605FD6C00DC50B5 /* Main.storyboard */,
 				0CD45DA52605FD6F00DC50B5 /* Assets.xcassets */,
 				0CD45DA72605FD6F00DC50B5 /* LaunchScreen.storyboard */,
@@ -381,6 +403,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				0C22CC6E261068E800E6364A /* PaybackTests.swift in Sources */,
+				0C3DF264261134330006912E /* TileViewModelTestCase.swift in Sources */,
+				0C3DF25E2611189B0006912E /* TileUseCaseMock.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -391,16 +415,16 @@
 				0C3F0DAF2607CA2400F539B4 /* ApiConstants.swift in Sources */,
 				0C3F0DBA2607D3A700F539B4 /* TileListViewModel.swift in Sources */,
 				0C3F0DD22607E33E00F539B4 /* ApplicationFlowCoordinator.swift in Sources */,
-				0C22CC34260FF95A00E6364A /* Realm.swift in Sources */,
+				0C3DF2552610FDEE0006912E /* Realm.swift in Sources */,
 				0C3F0DC52607D40700F539B4 /* TileListNavigator.swift in Sources */,
-				0C3F0DA82607C9D100F539B4 /* ShoppingListViewController.swift in Sources */,
+				0C3F0DA82607C9D100F539B4 /* TilesListViewController.swift in Sources */,
 				0C3F0DBC2607D3A700F539B4 /* TileViewModelBuilder.swift in Sources */,
 				0C3F0DBB2607D3A700F539B4 /* TileViewModel.swift in Sources */,
 				0C3F0DD42607E33E00F539B4 /* FlowCoordinator.swift in Sources */,
 				0C3F0DB12607CA2400F539B4 /* TileUseCase.swift in Sources */,
 				0C3F0DA72607C9D100F539B4 /* TileTableViewCell.swift in Sources */,
 				0C3F0DCA2607D52A00F539B4 /* ProgressHUD.swift in Sources */,
-				0C72A075260FC1BF0004665D /* Constants.swift in Sources */,
+				0C3DF2542610FDEE0006912E /* Constants.swift in Sources */,
 				0C3F0DD32607E33E00F539B4 /* FlowCoordinatorDependencyProviders.swift in Sources */,
 				0CD45D9D2605FD6C00DC50B5 /* AppDelegate.swift in Sources */,
 				0C3F0DB02607CA2400F539B4 /* Resource+Tile.swift in Sources */,
@@ -408,7 +432,7 @@
 				0C3F0DBD2607D3A700F539B4 /* TileListViewModelType.swift in Sources */,
 				0C3F0DAA2607C9D100F539B4 /* Tile.swift in Sources */,
 				0C3F0DA92607C9D100F539B4 /* TilesResponseModel.swift in Sources */,
-				0C3F0DD52607E33E00F539B4 /* VehicleListFlowCoordinator.swift in Sources */,
+				0C3F0DD52607E33E00F539B4 /* TileListFlowCoordinator.swift in Sources */,
 				0CD45D9F2605FD6C00DC50B5 /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
